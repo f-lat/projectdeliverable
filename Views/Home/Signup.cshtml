@@ -1,0 +1,186 @@
+﻿@{
+    Layout = null;
+}
+@Model string
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FAST MAIL | Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<script>
+
+    function check() {
+
+
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("pass").value;
+
+        if (email.length == 0 || password.length == 0) {
+            alert("Please Enter All Fields");
+        }
+
+
+    }
+
+    function checksignup() {
+        var input1 = document.getElementById("fname").value;
+        var input2 = document.getElementById("lname").value;
+        var input3 = document.getElementById("gender").value;
+        var input4 = document.getElementById("username").value;
+        var input5 = document.getElementById("email").value;
+        var input6 = document.getElementById("pass").value;
+        var input7 = document.getElementById("cpass").value;
+        var input8 = document.getElementById("phone").value;
+        //var input9 = document.getElementById("date").value;
+
+        if (input1.length == 0 || input2.length == 0 /*|| input3.length ==0 || input4.length ==0 || input5.length ==0 || input6.length ==0 || input7.length ==0 || input8.length ==0 */) {
+            alert("Please Enter All Fields");
+        }
+
+    }
+</script>
+
+<style>
+    #form1 {
+        width: 25%;
+        position: static;
+        margin: 10% 35%;
+        border: 2px solid #cccccc;
+        border-radius: 10px;
+        font-family: segoe ui;
+        background-color: white;
+    }
+
+    #inputs {
+        margin: 10px 20%;
+        width: 61%;
+        margin-top: 30px;
+    }
+
+    #inputbutton {
+        margin: 10px 10% 10px 28%;
+        width: 45%;
+        margin-top: 30px;
+    }
+
+    .button1 {
+        padding: 8px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 10px 0px;
+        cursor: pointer;
+        background-color: white;
+        color: #5a5a5a;
+        border: 2px solid #4CAF50;
+        transition-duration: 0.4s;
+        margin-top: 50px;
+    }
+
+        .button1:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+
+    .fields {
+        border-left: none;
+        border-top: none;
+        border-right: none;
+        border-bottom: 1px solid darkgrey;
+        padding: 5px 4px;
+        margin-top: 10px;
+    }
+
+    #body {
+        background-color: #f5f5f5;
+    }
+</style>
+
+
+
+<body id="body">
+    <div id="form1">
+        <form method="post" action="../Home/signupfunction">
+            <h1 style="margin: 20px 0px 60px 119px;">FAST MAIL</h1>
+            <div id="inputs">
+                <span style="color:red">@Model</span>
+                First Name: <br>
+                <input class="fields" type="text" name="fname" id="fname" size="30">
+            </div>
+            <div id="inputs">
+                Last Name: <br>
+                <input class="fields" type="text" name="lname" id="lname" size="30">
+            </div>
+            <div id="inputs">
+                Gender: <br> <br>
+                <input type="radio" id="male" name="gender" value="M">
+                <label for="male">Male</label><br>
+
+                <input type="radio" id="female" name="gender" value="F">
+                <label for="female">Female</label><br>
+
+                <input type="radio" id="other" name="gender" value="O">
+                <label for="other">Other</label>
+            </div>
+            <div id="inputs">
+                Date Of Birth: <br>
+                <input class="fields" type="date" name="dob" id="dob" size="30">
+            </div>
+            <div id="inputs">
+                Email: <br>
+                <input class="fields" type="text" name="email" id="email" size="30">
+            </div>
+            <div id="inputs">
+                Phone: <br>
+                <input class="fields" type="text" name="phone" id="phone" size="30">
+            </div>
+            <div id="inputs">
+                Password:<br>
+                <input class="fields" type="password" name="password" id="pass" size="30">
+                <br>
+            </div>
+
+            <div id="inputs">
+                Confirm Password:<br>
+                <input class="fields" type="password" name="cpassword" id="cpass" size="30">
+                <br>
+            </div>
+
+            <div id="inputs">
+                Select One of the following security questions.
+                <br>
+                <br>
+                <select id="seq" name="seq">
+                    <option value="1">What is the city in which you were born?</option>
+                    <option value="2">What is the name of your primary school?</option>
+                    <option value="3">What is the name of your first pet?</option>
+                </select>
+            </div>
+
+            <div id="inputs">
+                Answer: <br>
+                <input class="fields" type="text" name="qans" id="qans" size="30">
+            </div>
+
+            <div id="inputs">
+                <input type="radio" id="check1" name="check1" value="confirm">
+                <label for="confirm">Do you agree our terms and conditions.</label><br>
+            </div>
+
+            <div id="inputbutton">
+                <button class="button1" action="submit" name="Login" onclick="signcheck()">Create Account</input>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
