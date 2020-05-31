@@ -124,6 +124,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\emailitem.cs" />
     <Compile Include="Models\CRUD.cs" />
     <Compile Include="Models\email.cs" />
     <Compile Include="Models\user.cs" />
@@ -164,6 +165,17 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Signup.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\inbox.cshtml" />
+    <Content Include="Views\Home\Sent.cshtml" />
+    <Content Include="Views\Home\newmail.cshtml" />
+    <Content Include="Views\Home\spam.cshtml" />
+    <Content Include="Views\Home\block.cshtml" />
+    <Content Include="Views\Home\trash.cshtml" />
+    <Content Include="Views\Home\Drafts.cshtml" />
+    <Content Include="Views\Home\manage.cshtml" />
+    <Content Include="Views\Home\profile.cshtml" />
+    <Content Include="Views\Home\editprofile.cshtml" />
+    <Content Include="Views\Home\forgotpass.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

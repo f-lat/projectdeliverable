@@ -12,7 +12,7 @@ namespace projectdeliverable.Models
             public string lname;
             public string dob;
             public string doj;
-            public char gender;
+            public string gender;
             public string phone;
        }
 }

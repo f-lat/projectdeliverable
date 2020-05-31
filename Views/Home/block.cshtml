@@ -1,0 +1,143 @@
+﻿
+
+@{
+    Layout = null;
+}
+@using projectdeliverable.Models;
+@model List<emailitem>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>inbox</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+            .topnav a {
+                float: left;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+
+                .topnav a:hover {
+                    background-color: #ddd;
+                    color: black;
+                }
+
+                .topnav a.active {
+                    background-color: #4CAF50;
+                    color: white;
+                }
+
+        .emailbox {
+            background-color: #eaeaea;
+            width: 96%;
+            Margin: 1% 1% 0% 1%;
+            padding: 1%;
+            padding-bottom: 2%;
+            border-bottom: 1px solid black;
+            border-radius: 1%;
+        }
+
+        .content {
+            background-color: #e0e8e2;
+            margin: 0% 1% 1% 1%;
+            padding: 10px;
+        }
+
+        .subjectbox {
+            width: 70%;
+            float: left;
+        }
+
+        .datebox123 {
+            width: 30%;
+            float: right;
+        }
+
+        .delbutton {
+            padding: 0 15px 0 0;
+            color: red;
+            background: red;
+        }
+    </style>
+
+
+</head>
+<body>
+
+    <div class="topnav">
+        <a href="~/Home/inbox">Inbox</a>
+        <a href="~/Home/sent">Sent</a>
+        <a href="~/Home/newmail">New Mail</a>
+        <a href="~/Home/drafts">Drafts</a>
+        <a href="~/Home/spam">Spam</a>
+        <a href="~/Home/trash">Trash</a>
+        <a class="active" href="~/Home/block">Blocked Mail</a>
+        <a href="~/Home/manage">Manage inbox</a>
+        <a href="~/Home/profile">@Session["email"].ToString()</a>
+        <a style="float:right" href="~/Home/logout">Logout</a>
+    </div>>
+
+
+
+
+    @for (int i = 0; i < Model.Count; i++)
+    {
+        <div class="emailbox">
+            <div class="subjectbox">
+                <span><b>Subject: </b>@Model[i].esubject</span>
+            </div>
+            <div class="datebox123">
+                <span><b>Sent by: </b>@Model[i].sender</span>
+                <span><b>Time: </b>@Model[i].time</span>
+                <input type="button" class="delbutton" onclick="deleteMail('@Model[i].id')" ; />
+            </div>
+        </div>
+        <div class="content">
+            <p>@Model[i].content</p>
+        </div>
+
+    }
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+        function deleteMail(id) {
+            //location.href = id;
+            $.ajax({
+                type: "GET",
+                url: 'del',
+                data: { "mailid": id },
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    location.reload();
+                    //$("#divResult").html("success");
+                },
+                error: function (e) {
+                    location.reload();
+                    //$("#divResult").html("Something Wrong.");
+                }
+            });
+        }
+    </script>
+
+
+</body >
+</html >

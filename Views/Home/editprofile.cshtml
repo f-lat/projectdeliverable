@@ -1,0 +1,154 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>inbox</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+            .topnav a {
+                float: left;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+
+                .topnav a:hover {
+                    background-color: #ddd;
+                    color: black;
+                }
+
+                .topnav a.active {
+                    background-color: #4CAF50;
+                    color: white;
+                }
+
+        .emailbox {
+            background-color: #808080;
+            width: 96%;
+            Margin: 1% 1% 0% 1%;
+            padding: 1%;
+        }
+
+        .content {
+            background-color: aqua;
+            margin: 0% 1% 1% 1%;
+            padding: 10px;
+        }
+
+        input[type=text], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            input[type=submit]:hover {
+                background-color: #45a049;
+            }
+
+        .xd {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            width: 20%;
+            margin: 1% 35%;
+        }
+
+        .button1 {
+            display: inline-block;
+            font-size: 16px;
+            margin: 2% 35%;
+            cursor: pointer;
+            background-color: white;
+            color: #5a5a5a;
+            border: 2px solid #4CAF50;
+            transition-duration: 0.4s;
+            padding: 2% 3%;
+        }
+
+            .button1:hover {
+                background-color: #4CAF50;
+                color: white;
+            }
+
+        textarea {
+            width: 99%;
+            height: 200px;
+            max-width: 99%;
+        }
+    </style>
+
+
+</head>
+<body>
+
+    <div class="xd">
+        <form method="post" action="../Home/edit">
+            <span style="color:red;  margin-left:35%">@Model</span>
+            <br />
+            <br />
+            <label><b>First Name: </b></label>
+            <input type="text" id="fname" name="fname">
+            <br>
+            <br>
+
+            <label><b>Last Name: </b></label>
+            <input type="text" id="lname" name="lname" placeholder="Subject">
+            <br>
+            <br>
+
+            <label><b>Date of Birth: </b></label>
+            <input type="date" id="dob" name="dob">
+            <br>
+            <br>
+
+            <label><b>Phone: </b></label>
+            <input type="text" id="phone" name="phone" placeholder="0900-78601">
+            <br>
+            <br>
+
+            <label><b>Password: </b></label>
+            <input type="password" id="pass" name="pass">
+            <br>
+            <br>
+
+            <button class="button1" action="submit" name="send">Confirm</button>
+        </form>
+
+        <br />
+        <a href="../Home/profile"><button class="button1" name="back">Profile</button></a>
+    </div>
+
+</body>
+</html>
